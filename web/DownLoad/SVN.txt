@@ -1,0 +1,50 @@
+SVN
+user yjw
+password 123456
+https://115.29.169.13:8443/svn/Adnroid_SRC/
+
+MySQL
+MySQL57
+123456
+
+360应用平台
+账号:13075899999
+密码msm130758
+
+华为
+账号：13075899999
+密码：Msm130758
+
+腾讯应用宝
+账号：2141704598
+密码：Msm130758
+
+小米，vivo开放平台
+账号：13075899999
+密码：Msm130758
+
+微信
+appid wx424ec45d93302e32
+mchid 1484367292
+
+微信开放平台
+https://open.weixin.qq.com/
+账号：3451992377@qq.com
+密码：zjs19871215.
+
+
+
+
+极光推送
+
+
+账号 758461976@qq.com
+
+密码 M321321
+
+百度地图
+账号：kimhillzhang   
+密码：zjs19871215.
+
+canvas 和 Bitmap 和hash map 和下拉刷新
+面向对象，异常，并发，泛型，IO
