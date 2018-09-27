@@ -81,7 +81,7 @@
         <url-pattern>/SessionTrack</url-pattern>
     </servlet-mapping>
 
-    <!--上传-->
+    <!--上传图片-->
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.web.UploadServlet</servlet-class>
@@ -99,5 +99,15 @@
     <servlet-mapping>
         <servlet-name>DownLoadServlet</servlet-name>
         <url-pattern>/DownLoad</url-pattern>
+    </servlet-mapping>
+
+    <!--Json串-->
+    <servlet>
+        <servlet-name>JsonServlet</servlet-name>
+        <servlet-class>com.web.JsonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JsonServlet</servlet-name>
+        <url-pattern>/Json</url-pattern>
     </servlet-mapping>
 </web-app>

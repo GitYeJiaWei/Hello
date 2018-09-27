@@ -110,7 +110,9 @@ public class UploadServlet extends HttpServlet {
 
         //返回json串给前端
         PrintWriter writer = response.getWriter();
-        writer.write("{}");
+        writer.write("{}" );
+        writer.flush();
+        writer.close();
 
         //跳转到 message.jsp
         //request.getServletContext().getRequestDispatcher("/message.jsp").forward(request,response);
