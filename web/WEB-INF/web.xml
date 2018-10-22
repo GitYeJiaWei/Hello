@@ -101,13 +101,24 @@
         <url-pattern>/DownLoad</url-pattern>
     </servlet-mapping>
 
-    <!--Json串-->
+    <!--向客户端发送Json串-->
     <servlet>
         <servlet-name>JsonServlet</servlet-name>
         <servlet-class>com.web.JsonServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>JsonServlet</servlet-name>
         <url-pattern>/Json</url-pattern>
+    </servlet-mapping>
+
+    <!--注册-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.hello.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/Register</url-pattern>
     </servlet-mapping>
 </web-app>

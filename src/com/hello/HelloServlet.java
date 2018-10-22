@@ -30,6 +30,7 @@ public class HelloServlet extends HttpServlet {
         //String account =new String(request.getParameter("account").getBytes("ISO8859-1"),"UTF-8");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
+        request.getRemoteAddr();//获取IP地址
 
         // 为名字和密码创建 Cookie
         Cookie name = new Cookie("name",account);

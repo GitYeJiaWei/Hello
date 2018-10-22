@@ -36,8 +36,10 @@ public class JsonServlet extends HttpServlet {
         HashMap<String,String> map = new HashMap<>();
         map.put("key","123456");
         map.put("code","tttetet");
+        map.put("atr","12343212");
         Gson gson = new Gson();
         String value = gson.toJson(map);
+
 
         User user = new User(name,password);
         try {

@@ -32,4 +32,10 @@ public class User {
         DBHelper dbHelper =new DBHelper();
         return dbHelper.Query(user);
     }
+
+    public Boolean isInsert() throws SQLException {
+        User user  = new User(account,password);
+        DBHelper dbHelper =new DBHelper();
+        return dbHelper.Insert(user);
+    }
 }
