@@ -3,6 +3,7 @@ package com.web;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.model.User;
+import com.model.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,8 +43,9 @@ public class JsonServlet extends HttpServlet {
 
 
         User user = new User(name,password);
-        try {
-            if (user.isExist()){
+        UserDao userDao =new UserDao();
+        userDao.getConn();
+            if (userDao.isExist(user)){
                 System.out.println("登陆成功");
                 PrintWriter writer = response.getWriter();
                 writer.write(value);
@@ -54,9 +56,5 @@ public class JsonServlet extends HttpServlet {
             }else{
                 System.out.println("登陆失败");
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

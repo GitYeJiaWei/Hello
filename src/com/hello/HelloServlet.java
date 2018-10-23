@@ -1,6 +1,7 @@
 package com.hello;
 
 import com.model.User;
+import com.model.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -44,16 +45,14 @@ public class HelloServlet extends HttpServlet {
 
         //创建用户
         User user = new User(account,password);
-        try {
-            if (user.isExist()){
-                //登陆成功
-                response.sendRedirect("/Welcome");
-            }else{
-                //登陆失败
-                response.sendRedirect("/Error");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        UserDao userDao =new UserDao();
+        userDao.getConn();
+        if (userDao.isExist(user)){
+            //登陆成功
+            response.sendRedirect("/Welcome");
+        }else{
+            //登陆失败
+            response.sendRedirect("/Error");
         }
     }
 }

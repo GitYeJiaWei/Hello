@@ -21,7 +21,7 @@ public class DoFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String name = servletRequest.getParameter("account");
-        if (name.equals("叶") || name.equals("admin")){
+        if (!name.isEmpty()){
             // 把请求传回过滤链
             filterChain.doFilter(servletRequest,servletResponse);
         }else {
@@ -30,8 +30,8 @@ public class DoFilter implements Filter {
 
             //在页面输出响应信息
             PrintWriter out = servletResponse.getWriter();
-            out.print("<b>name不正确，请求被拦截，不能访问web资源</b>");
-            System.out.println("name不正确，请求被拦截，不能访问web资源");
+            out.print("<b>name为空，请求被拦截，不能访问web资源</b>");
+            System.out.println("name为空，请求被拦截，不能访问web资源");
         }
 
     }

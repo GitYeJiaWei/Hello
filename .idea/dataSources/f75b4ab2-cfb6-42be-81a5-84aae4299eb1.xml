@@ -924,12 +924,19 @@
     <table id="232" parent="7" name="user"/>
     <column id="233" parent="232" name="account">
       <Position>1</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="234" parent="232" name="password">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="232" name="country">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <DefaultExpression>&apos;china&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
   </database-model>

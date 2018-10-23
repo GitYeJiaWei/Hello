@@ -1,7 +1,5 @@
 package com.model;
 
-import java.sql.SQLException;
-
 public class User {
     private String account;
     private String password;
@@ -27,15 +25,4 @@ public class User {
         this.password = password;
     }
 
-    public Boolean isExist() throws SQLException {
-        User user  = new User(account,password);
-        DBHelper dbHelper =new DBHelper();
-        return dbHelper.Query(user);
-    }
-
-    public Boolean isInsert() throws SQLException {
-        User user  = new User(account,password);
-        DBHelper dbHelper =new DBHelper();
-        return dbHelper.Insert(user);
-    }
 }
