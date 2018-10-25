@@ -121,4 +121,15 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
+
+    <!--验证码-->
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>com.hello.ImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/Image</url-pattern>
+    </servlet-mapping>
+
 </web-app>

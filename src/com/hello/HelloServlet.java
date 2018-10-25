@@ -4,11 +4,9 @@ import com.model.User;
 import com.model.UserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 public class HelloServlet extends HttpServlet {
@@ -23,16 +21,19 @@ public class HelloServlet extends HttpServlet {
     //处理post请求
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
+
     }
 
     //处理get请求
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //接受客户端的用户名和密码,把字符编码改成utf-8
         //String account =new String(request.getParameter("account").getBytes("ISO8859-1"),"UTF-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+
         String account = request.getParameter("account");
         String password = request.getParameter("password");
-        request.getRemoteAddr();//获取IP地址
-
+       /* request.getRemoteAddr();//获取IP地址
         // 为名字和密码创建 Cookie
         Cookie name = new Cookie("name",account);
         Cookie pass = new Cookie("pass",password);
@@ -41,18 +42,30 @@ public class HelloServlet extends HttpServlet {
         pass.setMaxAge(60*2);
         // 在响应头中添加两个 Cookie
         response.addCookie(name);
-        response.addCookie(pass);
+        response.addCookie(pass);*/
 
-        //创建用户
-        User user = new User(account,password);
-        UserDao userDao =new UserDao();
-        userDao.getConn();
-        if (userDao.isExist(user)){
-            //登陆成功
-            response.sendRedirect("/Welcome");
+        HttpSession session =request.getSession();
+        String verificationCode = (String)session.getAttribute("helloCode");
+        String checkcode = request.getParameter("checkcode");
+
+        PrintWriter out = response.getWriter();
+        if(checkcode.equals(verificationCode)){
+            out.println(1);
+            //创建用户
+            User user = new User(account,password);
+            UserDao userDao =new UserDao();
+            userDao.getConn();
+            if (userDao.isExist(user)){
+                //登陆成功
+                response.sendRedirect("/Welcome");
+            }else{
+                //登陆失败
+                response.sendRedirect("/Error");
+            }
         }else{
-            //登陆失败
-            response.sendRedirect("/Error");
+            out.println("验证码不正确");
         }
+        out.flush();
+        out.close();
     }
 }

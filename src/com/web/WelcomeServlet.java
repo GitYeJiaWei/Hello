@@ -56,7 +56,6 @@ public class WelcomeServlet extends HttpServlet {
                 String password = rs.getString("password");
                 writer.println("account:"+account+" password:"+password+"<br>");
             }
-            writer.println("登陆成功");
             writer.println("<script language='javascript'>alert('登陆成功')</script>");
 
             // 完成后关闭

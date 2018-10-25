@@ -21,7 +21,8 @@ public class ErrorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer =response.getWriter();
-        writer.println("登陆失败");
+        //writer.append("123");
+        writer.println("<script language='javascript'>alert('登陆失败')</script>");
         writer.close();
     }
 }
