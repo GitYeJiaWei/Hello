@@ -37,7 +37,8 @@
 
       function jump()
       {
-          window.location.href="register.jsp";
+          //window.location.href="register.jsp";
+          window.location.assign("register.jsp");
       }
   </script>
 
@@ -59,7 +60,7 @@
           <br>
           <br>
           <img  src="<%=request.getContextPath() %>/Image" alt="验证码" id="image" />
-          <span id="span"></span>
+          <span id="span" ></span>
           <a href="javascript:reload()"><label>换一张</label></a>
           <br>
           <br>

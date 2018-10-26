@@ -48,6 +48,19 @@ public class HelloServlet extends HttpServlet {
         String verificationCode = (String)session.getAttribute("helloCode");
         String checkcode = request.getParameter("checkcode");
 
+
+        char[] chars1 =verificationCode.toCharArray();
+        for (int i =0;i<chars1.length;i++){
+            chars1[i] = isUpperCase(chars1[i]);
+        }
+        verificationCode = new String(chars1);
+
+        char[] chars2 =checkcode.toCharArray();
+        for (int i =0;i<chars2.length;i++){
+            chars2[i] = isUpperCase(chars2[i]);
+        }
+        checkcode = new String(chars2);
+
         PrintWriter out = response.getWriter();
         if(checkcode.equals(verificationCode)){
             out.println(1);
@@ -67,5 +80,24 @@ public class HelloServlet extends HttpServlet {
         }
         out.flush();
         out.close();
+    }
+
+    //通过 ASCII 码判断字母大小写，ASCII在 65-90 之间是大写，97-122 是小写
+    //通过 ASCII 加 32 转换为小写，减 32 转换为大写
+    //或者通过CharCharacter.toLowerCase(c)转小写，Character.toUpperCase(c)转大写
+    //转小写
+    public char isUpperCase(char c){
+        if (c>=65 && c<=90){
+            c =Character.toLowerCase(c);
+        }
+        return c;
+    }
+    //转大写
+    public char isLowerCase(char c){
+        if (c>=97 && c<=122){
+            c= Character.toUpperCase(c);
+        }
+            return c;
+
     }
 }

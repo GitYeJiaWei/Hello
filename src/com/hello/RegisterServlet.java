@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,15 +26,22 @@ public class RegisterServlet extends HttpServlet {
 
 
         if(account.trim().isEmpty() || password.trim().isEmpty()){
-            JOptionPane.showMessageDialog(new JFrame().getContentPane(),
+            //writer.println("账号或密码不能为空!\n请重新输入！");
+            //JOptionPane 是部署在tomcat服务器上，所以执行的也是在tomcat服务器上，
+            //在客户端上是不会弹出提示框的，这是服务端的职责，跟客户端没关系，
+            //要在客户端弹出提示框要用客户端的技术，js
+           /*JOptionPane.showMessageDialog(new JFrame().getContentPane(),
                     "账号或密码不能为空!\n请重新输入！", "系统信息", JOptionPane.WARNING_MESSAGE);
-            response.sendRedirect("register.jsp");
+           */
+            //response.sendRedirect("register.jsp"); //重定向的方法跳转到register。jsp
+
+            request.setAttribute("error","账号或密码不能为空!");
+            request.getRequestDispatcher("register.jsp").forward(request,response);
             return;
         }
         if (!password.equals(repassword)){
-            JOptionPane.showMessageDialog(new JFrame().getContentPane(),
-                    "两次密码不相同!\n请重新输入！","系统信息",JOptionPane.WARNING_MESSAGE);
-            response.sendRedirect("register.jsp");
+            request.setAttribute("error","两次密码不相同!");
+            request.getRequestDispatcher("register.jsp").forward(request,response);
         }else{
 
             //创建用户
@@ -45,16 +51,14 @@ public class RegisterServlet extends HttpServlet {
             userDao.getConn();
 
             if (userDao.addUser(user)){
-                //登陆成功
-                JOptionPane.showMessageDialog(new JFrame().getContentPane(),
-                        "注册成功！","系统信息",JOptionPane.WARNING_MESSAGE);
-                response.sendRedirect("index.jsp");
+                writer.println("注册成功");
+                writer.println("<br><a href ='index.jsp'>返回登陆</a>");
+               /* request.setAttribute("error","注册成功");
+                request.getRequestDispatcher("register.jsp").forward(request,response);*/
             }else{
-                //登陆失败
-                JOptionPane.showMessageDialog(new JFrame().getContentPane(),
-                        "注册失败！","系统信息",JOptionPane.WARNING_MESSAGE);
-                response.sendRedirect("register.jsp");
+                    request.setAttribute("error","注册失败！账号可能已被注册");
+                    request.getRequestDispatcher("register.jsp").forward(request,response);
+                }
             }
         }
-    }
 }

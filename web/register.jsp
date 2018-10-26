@@ -11,6 +11,11 @@
     <title>注册</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<script>
+    <%
+        String s =(String) request.getAttribute("error");
+    %>
+</script>
 <body>
     <div>
         <h1>用户注册</h1>
@@ -24,6 +29,8 @@
             确认密码：<input type="password" name="repassword">
             <br>
             <br>
+            <span ><%=s%><span/>
+            <br><br>
             <input type="submit" value="注册">
             <input type="reset" value="重置">
         </form>
