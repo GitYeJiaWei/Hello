@@ -944,18 +944,9 @@
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="237" parent="232" name="account_2">
-      <ColNames>account</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="238" parent="232" name="account">
+    <key id="237" parent="232" name="account">
       <ColNames>account</ColNames>
       <UnderlyingIndexName>account</UnderlyingIndexName>
-    </key>
-    <key id="239" parent="232" name="account_2">
-      <ColNames>account</ColNames>
-      <UnderlyingIndexName>account_2</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

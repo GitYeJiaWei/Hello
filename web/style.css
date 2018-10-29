@@ -4,6 +4,7 @@ body{
     margin: 0;
     padding: 150px;
     font-family: Georgia,Palatino,serif;
+    /*font-family: Georgia,Palatino,serif; 字体的一些风格*/
 }
 p{color: #FFA500;font-size: 14px;text-align: center;}
 h1,h2,h3,h4,h5{color: green; text-align: center;}

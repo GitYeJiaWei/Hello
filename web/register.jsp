@@ -14,6 +14,9 @@
 <script>
     <%
         String s =(String) request.getAttribute("error");
+        if (s==null){
+            s="";
+        }
     %>
 </script>
 <body>

@@ -99,23 +99,23 @@ public class UploadServlet extends HttpServlet {
                     System.out.println(filePath);
                     // 保存文件到硬盘
                     item.write(stroeFile);
-                    request.setAttribute("message","文件上传成功！");
+                    request.setAttribute("upload","文件上传成功！");
                 }
             }
         }
         } catch (Exception e) {
             //e.printStackTrace();
-            request.setAttribute("message","错误信息："+e.getMessage());
+            request.setAttribute("upload","错误信息："+e.getMessage());
         }
 
-        //返回json串给前端
+       /* //返回json串给前端
         PrintWriter writer = response.getWriter();
         writer.write("{}" );
         writer.flush();
-        writer.close();
+        writer.close();*/
 
         //跳转到 message.jsp
-        //request.getServletContext().getRequestDispatcher("/message.jsp").forward(request,response);
+        request.getServletContext().getRequestDispatcher("/message.jsp").forward(request,response);
     }
 
     //处理get请求

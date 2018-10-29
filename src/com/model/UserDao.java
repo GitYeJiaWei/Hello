@@ -91,7 +91,8 @@ public class UserDao extends DBDao{
                 r = true;
             }
         }catch(Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println(e.getMessage());
         }finally{
             this.closeAll();
         }

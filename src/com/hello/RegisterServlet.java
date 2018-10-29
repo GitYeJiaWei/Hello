@@ -56,7 +56,7 @@ public class RegisterServlet extends HttpServlet {
                /* request.setAttribute("error","注册成功");
                 request.getRequestDispatcher("register.jsp").forward(request,response);*/
             }else{
-                    request.setAttribute("error","注册失败！账号可能已被注册");
+                    request.setAttribute("error","注册失败！账号可能已经存在");
                     request.getRequestDispatcher("register.jsp").forward(request,response);
                 }
             }
