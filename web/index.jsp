@@ -12,6 +12,7 @@
     <title>登陆</title>
       <%--link 链接style.css--%>
       <link rel="stylesheet" type="text/css" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   </head>
 
   <script type="text/javascript" src="js/jQuery1.9.1.js"></script>

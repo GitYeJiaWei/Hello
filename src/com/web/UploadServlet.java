@@ -120,5 +120,6 @@ public class UploadServlet extends HttpServlet {
 
     //处理get请求
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request,response);
     }
 }

@@ -18,7 +18,8 @@ public class DBDao {
         String sUseDB ="use userdb";
         String sDropTb ="drop table if exists user";
         String sCreateTb ="create table user(account varchar(20),password varchar(20))";
-        String sCreateTbifNot ="create table if not exists user(account varchar(20),password varchar(20))default charset = utf8;";
+        String sCreateTbifNot ="create table if not exists user(id integer not null auto_increment,account varchar(20) not null," +
+                "password varchar(20) not null,primary key (id),unique(account))engine =innodb auto_increment =1 default charset =utf8;";
         String sAlter ="alter table user change account account varchar(20) character set utf8";
         String sInsert1 ="insert into user values('叶','123')";
         String sInsert2 ="insert into user values('admin','123')";

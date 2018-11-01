@@ -47,7 +47,8 @@ public class HelloServlet extends HttpServlet {
         HttpSession session =request.getSession();
         String verificationCode = (String)session.getAttribute("helloCode");
         String checkcode = request.getParameter("checkcode");
-
+        System.out.println(checkcode.equalsIgnoreCase(checkcode));
+        //不区分大小写
 
         char[] chars1 =verificationCode.toCharArray();
         for (int i =0;i<chars1.length;i++){
@@ -62,6 +63,7 @@ public class HelloServlet extends HttpServlet {
         checkcode = new String(chars2);
 
         PrintWriter out = response.getWriter();
+
         if(checkcode.equals(verificationCode)){
             out.println(1);
             //创建用户

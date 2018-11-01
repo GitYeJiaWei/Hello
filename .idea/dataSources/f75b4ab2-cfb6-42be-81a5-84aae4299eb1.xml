@@ -921,22 +921,25 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="232" parent="7" name="user"/>
-    <column id="233" parent="232" name="account">
-      <Position>1</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
+    <table id="232" parent="7" name="user">
       <Collation>utf8_general_ci</Collation>
+    </table>
+    <column id="233" parent="232" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="232" name="password">
+    <column id="234" parent="232" name="account">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="232" name="country">
+    <column id="235" parent="232" name="password">
       <Position>3</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <DefaultExpression>&apos;china&apos;</DefaultExpression>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="236" parent="232" name="account">
@@ -944,7 +947,12 @@
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="237" parent="232" name="account">
+    <key id="237" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="238" parent="232" name="account">
       <ColNames>account</ColNames>
       <UnderlyingIndexName>account</UnderlyingIndexName>
     </key>

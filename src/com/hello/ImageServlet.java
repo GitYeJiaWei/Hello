@@ -45,7 +45,7 @@ public class ImageServlet extends HttpServlet {
 	        bfi.setRGB(x, y, (int)(Math.random() * 255));
 	    }
 		
-	  //设置验证码中的干扰线
+	 /* //设置验证码中的干扰线
 	    for (int i = 0; i < 6; i++) {  
 		      //随机获取干扰线的起点和终点
 		      int xstart = (int)(Math.random() * 80);
@@ -54,7 +54,7 @@ public class ImageServlet extends HttpServlet {
 		      int yend = (int)(Math.random() * 25);
 		      g.setColor(interLine(1, 255));
 		      g.drawLine(xstart, ystart, xend, yend);
-		    }
+		    }*/
 	    HttpSession session = request.getSession();  //保存到session
 		session.setAttribute("helloCode", sb.toString());
 		ImageIO.write(bfi, "JPG", response.getOutputStream());  //写到输出流
