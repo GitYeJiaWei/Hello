@@ -2,7 +2,7 @@ body{
     color: cornflowerblue;
     background: #EEEEEE;
     margin: 0;
-    padding: 150px;
+    /*padding: 150px;*/
     font-family: Georgia,Palatino,serif;
     /*font-family: Georgia,Palatino,serif; 字体的一些风格*/
 }
@@ -32,9 +32,9 @@ form{
 
 div{
     border: 0px solid cornflowerblue;
-    width: 70%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
-    background:url("DownLoad/12345.jpg") no-repeat;
+    background:url("DownLoad/345.jpg") no-repeat;
     background-size: 100%;
 }
