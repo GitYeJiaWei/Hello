@@ -9,7 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
+<head>zz
     <title>home</title>
     <%--三个部分的参数也可以写在这里--%>
     <%--<style type="text/css">
@@ -18,29 +18,32 @@
         div#menu{background:yellow;width:100px;height:500px;}
         div#footer{background:grey;width:100px;height:500px;}
     </style>--%>
+
+    <script defer="defer">
+        function myFunction()
+        {
+            var x=document.getElementById("demo"); // 找到元素
+            document.write("这是document.write")
+            x.innerHTML="你是个大傻逼!重要不";   //改变语句
+            x.style.color="#ff0000";          // 改变样式
+            alert("这是Alert弹出框")
+        }
+
+        function myDown() {
+            window.location.assign("down.jsp");
+        }
+
+        function myUpload() {
+            window.location.assign("upload.jsp");
+        }
+        /*这个是jsp中的java表达式表示里面的内容是java语句,加等号相当于out.print('request.getAttribute("message")');*/
+        <%
+            List<User> userList =(ArrayList)request.getAttribute("message");
+        %>
+
+
+    </script>
 </head>
-<script>
-    function myFunction()
-    {
-        var x=document.getElementById("demo"); // 找到元素
-        x.innerHTML="你是个大傻逼!重要不";   //改变语句
-        x.style.color="#ff0000";          // 改变样式
-    }
-
-    function myDown() {
-        window.location.assign("down.jsp");
-    }
-
-    function myUpload() {
-        window.location.assign("upload.jsp");
-    }
-    /*这个是jsp中的java表达式表示里面的内容是java语句,加等号相当于out.print('request.getAttribute("message")');*/
-    <%
-        List<User> userList =(ArrayList)request.getAttribute("message");
-    %>
-
-
-</script>
 <body>
 <div id="container" style="width: 100%;height:100%">
 
