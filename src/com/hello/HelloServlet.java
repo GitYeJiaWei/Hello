@@ -4,10 +4,12 @@ import com.model.User;
 import com.model.UserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 public class HelloServlet extends HttpServlet {
     public HelloServlet(){

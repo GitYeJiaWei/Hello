@@ -5,19 +5,91 @@
     <title>Title</title>
 </head>
 <body>
-    <p>我想<font color="red" size="1">回家</font></p><br>
-    <p>我想<font color="red" size="2">回家</font></p><br>
-    <p>我想<font color="red" size="3">回家</font></p><br>
-    <p>我想<font color="red" size="4">回家</font></p><br>
-    <p>我想<font color="red" size="5">回家</font></p><br>
-    <p>我想<font color="red" size="6">回家</font></p><br>
-    <p>我想<font color="red" size="7" face="仿宋">回家</font></p><br>
-
+    <!--
+        h1 标题 :
+        h后面数字 取值范围:  1~6
+    -->
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <h6>标题6</h6>
+    <!--水平分割线-->
+    <hr>
+    <!--
+          font 标签常用属性
+                    color: 颜色
+                    size : 改变字体大小  范围:1~7
+                    face : 字体
+                    <i>,<em> : 斜体
+                    <b>,<strong> : 加粗
+          <标签  属性的名称="属性的值">
+     -->
+    <p>段落，我想<font color="red" size="1">回家</font></p>
+    <p>段落，我想<font color="red" size="2">回家</font></p>
+    <p>段落，我想<font color="red" size="6">回家</font></p>
+    <p><strong>黑马程序员</strong>的学员多为大学毕业后，<em>有理想、有梦想，</em>想从</p>
+    <p>一直以来<font color="#7fff00" size="3"><b><i>，黑马程序员以技术视</i></b></font>角关注IT产业发展，以深度分享推进产</p>
+    <p>段落，我想<font color="red" size="7" face="仿宋">回家</font></p>
     <!--
         ./ 代表当前文件路径
         ../ 代表上一级文件路径
         ../../ 代表上上一级路径
+        常用属性:
+				src : 指定图片路径
+				width : 指定图片宽度
+				height : 图片高度
+				alt : 文件加载失败时的提示信息
     -->
-    <img src="img/HTML.png" width="481" height="2533" alt="文件加载失败的提示信息"/>
+    <img src="../web/DownLoad/1.gif"  alt="文件加载失败的提示信息"/>
+    <img src="./img/1.gif" width="50%" alt="文件加载失败的提示信息"/>
+    <!--无序列表
+                ul
+                    li 列表项
+                type属性 . 小圆圈, 小方块, 默认小黑点
+      -->
+    <ul type="square">
+        <li>无序列表1</li>
+        <li>无序列表2</li>
+    </ul>
+    <!--
+                有序列表
+                常用属性:
+                    type : 指定序号的类型
+                    start : 从几开始,必须得写数字
+            -->
+    <ol type="a" start="2">
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+    </ol>
+    <!--友情链接-->
+    <ul >
+        <li style="display: inline"><a href="http://www.baidu.com">百度网</a></li>
+        <li style="display: inline"><a herf="http://www.baidu.com" target="_blank">百度一下</a></li>
+    </ul>
+    <!--
+                table
+                    常用属性:
+                        border : 指定边框
+                        width  : 	宽度
+                        height : 	高度
+                        bgcolor:	背景色
+                        align	:  对齐方式
+                    tr 标签  行数
+                    td 标签  列数
+            -->
+    <table border="1px" width="400px" bgcolor="#7fff00" align="center">
+        <tr bgcolor="#6495ed" align="center">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td bgcolor="aqua" align="center">1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td bgcolor="aqua" align="center">1</td>
+        </tr>
+    </table>
 </body>
 </html>
