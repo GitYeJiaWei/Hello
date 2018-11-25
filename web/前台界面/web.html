@@ -150,7 +150,7 @@
 </table>
 
 <!--
-        表单标签
+        表单标签 form
             action : 直接提交的地址
             method :
                     get 方式  默认提交方式 ,会将参数拼接在链接后面 , 有大小限制 ,4k
@@ -194,6 +194,7 @@
     邮箱：<input type="text"><br>
     手机号码：<input type="tel"><br>
     靓照：<input type="file"><br>
+    <!--radio 如果想要一组需要给每一个相同的name值sex-->
     性别：<input type="radio" name="sex">男
     <input type="radio" name="sex">女
     <input type="radio" name="sex">妖<br>
@@ -209,7 +210,7 @@
     <option>湖北</option>
     <option>内蒙古</option>
     <option>火星</option>
-</select>
+    </select>
     <br>
     出生日期：<input type="datetime-local"><br>
     验证码：<input type="text"><br>
@@ -233,7 +234,10 @@
 </frameset>
 -->
 
-<!--快标签-->
+<!--快标签
+    div标签：默认占一行，自行换行
+    span标签：内容显示在同一行
+-->
     <div>张三</div>
     <div>李四</div>
     <span>王五</span>
@@ -249,9 +253,9 @@
 					both : 两边都不允许浮动
 					left: 左边不允许浮动
 					right : 右边不允许浮动
-			流式布局
+			流式布局,放大缩小不会消失
 		-->
-<div style="float:right;width: 200px; height: 200px; background-color: red;"></div>
+<div style="float:left;width: 200px; height: 200px; background-color: red;"></div>
 <div style="clear: both;"></div>
 <div style="width: 250px; height: 200px; background-color: greenyellow;"></div>
 <div style="width: 200px; height: 200px; background-color: blue;"></div>
