@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定时器
+        //window 对象是一个最顶层对象
+        //window.setInterval("alert('123');",5000);
+        function test() {
+            console.log("setInterval 调用了");
+        }
+
+        var timerId;
+        function startInterval() {
+            timerId = setTimeout("test()",3000);
+        }
+        
+        function stopInterval() {
+            clearTimeout(timerId);
+        }
+    </script>
+    <script>
+        //切换图片
+        function changeImg() {
+            var img =document.getElementById("img1");
+            img.src ="../img/title2.jpg"
+        }
+    </script>
+    <script>
+        var index =0;
+        //图片自动轮播
+        function change() {
+            var img =document.getElementById("img2");
+
+            var curIndex = index%3 +1;
+            img.src="../img/"+curIndex+".jpg";
+
+            index +=1;
+        }
+        
+        function init() {
+            setInterval("change()",3000);
+        }
+    </script>
+    
+</head>
+<body onload="init()">
+    <input type="button" value="开启定时器" onclick="startInterval()">
+    <input type="button" value="取消定时器" onclick="stopInterval()">
+
+    <input type="button" value="点击切换图片" onclick="changeImg()"><br>
+    <img src="../img/bartlesvillecf.jpg" id="img1">
+
+    <div>
+        <img src="../img/1.jpg" width="100%" id="img2"/>
+    </div>
+</body>
+</html>

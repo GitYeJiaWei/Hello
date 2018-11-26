@@ -181,7 +181,7 @@
         select  : 下拉列表
             option : 选择项
     -->
-<form action="test1.html" method="post">
+<form action="注册界面.html" method="post">
     <!--隐藏域
         主要是用来存放页面上一些ID信息
     -->
@@ -210,7 +210,7 @@
     <option>湖北</option>
     <option>内蒙古</option>
     <option>火星</option>
-    </select>
+</select>
     <br>
     出生日期：<input type="datetime-local"><br>
     验证码：<input type="text"><br>
@@ -238,13 +238,14 @@
     div标签：默认占一行，自行换行
     span标签：内容显示在同一行
 -->
-    <div>张三</div>
-    <div>李四</div>
-    <span>王五</span>
-    <span>赵六</span>
+<div>张三</div>
+<div>李四</div>
+<span>王五</span>
+<span>赵六</span>
 
 <!--
-			CSS浮动 : 浮动的元素会脱离正常的文档流,在正常的文档流中不占空间
+	CSS浮动 : 浮动的元素会脱离正常的文档流,在正常的文档流中不占空间
+	           所以要正常排版需要清除浮动
 				float属性:
 					left
 					right
@@ -257,7 +258,22 @@
 		-->
 <div style="float:left;width: 200px; height: 200px; background-color: red;"></div>
 <div style="clear: both;"></div>
-<div style="width: 250px; height: 200px; background-color: greenyellow;"></div>
-<div style="width: 200px; height: 200px; background-color: blue;"></div>
+<div style="float: left;width: 250px; height: 200px; background-color: greenyellow;"></div>
+<div style="float: left;width: 200px; height: 200px; background-color: blue;"></div>
+<div style="clear: both;"></div>
+
+<!--盒子模式-->
+<div style="border: 3px solid red;width: 400px;height: 400px;">
+    <div style="border: 3px solid gray;width: 100px;height: 100px;padding: 30px 20px 30px 10px;">
+        这是一个盒子模式
+    </div>
+    <div style="border: 3px solid green;width: 150px;height: 150px;">
+        这是另一个盒子模式
+    </div>
+    <!--绝对位置 -->
+    <div style="border: 3px solid greenyellow;width: 100px;height: 100px;position: absolute;bottom: 100px;right: 50px;">
+        盒子模式中，这是一个绝对位置
+    </div>
+</div>
 </body>
 </html>
