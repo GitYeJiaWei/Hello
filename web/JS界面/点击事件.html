@@ -11,6 +11,12 @@
             console.log("setInterval 调用了");
         }
 
+        //setTimeout("test()",2000);  //超时调用
+        //setInterval("test()",2000); //间歇调用，一般用超时调用代替间歇，递归方法
+
+        // var timerId = setTimeout("test()",2000);
+        // clearTimeout(timerId);      //取消超时调用
+
         var timerId;
         function startInterval() {
             timerId = setTimeout("test()",3000);

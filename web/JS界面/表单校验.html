@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+			确认事件
+			事件触发函数
+			函数操作元素
+
+			校验用户名
+				1. 当用户鼠标移动到输入框中时候, 请给用户一个提示
+					事件: 焦点事件 onfocus
+					触发函数
+					函数里面要做一些事情
+						span 给用户提示信息
+
+				2. 当用户鼠标移开时候, 校验一下用户输入
+					事件: 失去焦点  onblur
+					触发函数
+					函数要干事情:
+						校验用户输入
+						得到用户输入的值
+
+				3. 当用户按键输入抬起的时候, 校验一下用户输入
+		-->
+    <script>
+        function showTips(spanID,msg) {
+            var span = document.getElementById(spanID);
+            span.innerHTML = msg;
+        }
+
+        function checkUsername() {
+            /*
+               alert(this)  每一个函数中都隐藏着一个this指针, 指向的是当前事件触发对象
+             */
+            var uValue = document.getElementById("username").value;
+            var span =document.getElementById("span_username");
+            if (uValue.length<6){
+                span.innerHTML = "对不起，太短了";
+                return false
+            } else{
+                span.innerHTML = "恭喜您，够用";
+                return true;
+            }
+        }
+
+        function checkFrom() {
+            var flag =checkUsername();
+            return flag;
+        }
+    </script>
+</head>
+<body>
+    <!--
+        onblur :失去焦点触发事件
+        onfocus:获得焦点触发事件
+        onsubmit=“return false”为不执行提交 ，return 一定要加
+        onsubmit=“return true”或 onsubmit=“return ”都执行提交
+    -->
+    <form action="./点击事件.html" onsubmit="return checkFrom()">
+            用户名：<input type="text" id="username" onblur="checkUsername()"
+                    onfocus="showTips('span_username','用户名长度不能小于六位')">
+
+        <span id="span_username"></span><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

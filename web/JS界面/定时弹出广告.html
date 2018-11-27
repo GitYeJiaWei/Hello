@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*获取id的显隐情况
+                block： 显示
+                none ： 隐藏
+        */
+        function funct1() {
+            var im = document.getElementById("img");
+            im.style.display ="block";
+        }
+
+        function funct2() {
+            var im = document.getElementById("img");
+            im.style.display ="none";
+        }
+
+        /*
+			1. 确定事件: 页面加载完成的事件onload
+			2. 事件要触发函数:  init()
+			3. init函数里面做一件事: 
+			   1. 启动一个定时器 : setTimeout() 
+			   2. 显示一个广告
+			      1. 再去开启一个定时5秒钟之后,关闭广告
+		*/
+        function init() {
+            setTimeout("showImg()",3000);
+        }
+        
+        function showImg() {
+            var img = document.getElementById("images");
+            img.style.display = "block";
+
+            setTimeout("hideImg()",3000);
+        }
+        
+        function hideImg() {
+            var img = document.getElementById("images");
+            img.style.display = "none";
+            setTimeout("init()");
+        }
+        
+    </script>
+</head>
+<!-- onload 属性在对象已加载时触发,常用在<body>中-->
+<body onload="init()">
+    <input type="button" value="显示图片" onclick="funct1()">
+    <input type="button" value="隐藏图片" onclick="funct2()"><br>
+
+    <img src="../image/semir.gif" width="97" id="img"> <br>
+
+    <img src="../image/septwolves.gif" width="97" id="images" style="display: none">
+</body>
+</html>
