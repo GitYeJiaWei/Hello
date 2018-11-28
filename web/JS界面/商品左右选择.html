@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+			步骤分析
+				1. 确定事件: 点击事件 :onclick事件
+				2. 事件要触发函数 selectOne
+				3. selectOne要做一些操作
+					(将左边选中的元素移动到右边的select中)
+					1. 获取左边Select中被选中的元素
+					2. 将选中的元素添加到右边的Select中就可以
+		-->
+    <script>
+        function selectOne(){
+//				1. 获取左边Select中被选中的元素
+            var leftSelect = document.getElementById("leftSelect");
+            var options = leftSelect.options;
+
+            //找到右侧的Select
+            var rightSelect = document.getElementById("rightSelect");
+            //遍历找出被选中的option
+            for(var i=0; i < options.length; i++){
+                var option1 = options[i];
+                if(option1.selected){
+                    //				2. 将选中的元素添加到右边的Select中就可以
+                    rightSelect.appendChild(option1);
+                }
+            }
+        }
+
+        //将左边所有的商品移动到右边
+        function selectAll(){
+//				1. 获取左边Select中被选中的元素
+            var leftSelect = document.getElementById("leftSelect");
+            var options = leftSelect.options;
+
+            //找到右侧的Select
+            var rightSelect = document.getElementById("rightSelect");
+            //遍历找出被选中的option
+            for(var i=options.length - 1; i >=0; i--){
+                var option1 = options[i];
+                rightSelect.appendChild(option1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td>分类名称</td>
+            <td><input type="text" value="手机数码"></td>
+        </tr>
+        <tr>
+            <td>分类描述</td>
+            <td>这里面都是手机数码</td>
+        </tr>
+        <tr>
+            <td>分类商品</td>
+            <td>
+                <div style="float: left">
+                    已有商品<br>
+                    <!--
+                        multiple 属性规定可同时选择多个选项，即多选
+                        size 可以设置显示的数量
+                     -->
+                    <select multiple="multiple" size="2" id="leftSelect">
+                        <option>华为1</option>
+                        <option>华为2</option>
+                        <option>华为3</option>
+                        <option>华为4</option>
+                        <option>华为5</option>
+                    </select>
+                    <br>
+                    <a href="#" onclick="selectOne()">&gt;&gt;</a><br>
+                    <a href="#" onclick="selectAll()">&gt;&gt;&gt;&gt;</a>
+                </div>
+
+                <div style="float: right">
+                    未有商品<br>
+                    <select multiple="multiple" size="2" id="rightSelect">
+                        <option>小米1</option>
+                        <option>小米2</option>
+                        <option>小米3</option>
+                        <option>小米4</option>
+                    </select>
+                    <br>
+                    <a href="#" onclick="">&lt;&lt;</a><br>
+                    <a href="#" onclick="">&lt;&lt;&lt;&lt;</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="提交"></td>
+        </tr>
+    </table>
+</body>
+</html>
