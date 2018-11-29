@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!--
+
 			步骤分析
 				1. 确定事件: 点击事件 :onclick事件
 				2. 事件要触发函数 selectOne
@@ -64,8 +65,9 @@
                     <!--
                         multiple 属性规定可同时选择多个选项，即多选
                         size 可以设置显示的数量
+                        ondblclick 双击事件
                      -->
-                    <select multiple="multiple" size="2" id="leftSelect">
+                    <select multiple="multiple" size="2" id="leftSelect" ondblclick="selectOne()">
                         <option>华为1</option>
                         <option>华为2</option>
                         <option>华为3</option>

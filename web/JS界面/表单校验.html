@@ -23,6 +23,7 @@
 						得到用户输入的值
 
 				3. 当用户按键输入抬起的时候, 校验一下用户输入
+				    onkeyup
 		-->
     <script>
         function showTips(spanID,msg) {
@@ -55,12 +56,13 @@
     <!--
         onblur :失去焦点触发事件
         onfocus:获得焦点触发事件
+        onkeyup:抬起键盘时触发事件
         onsubmit=“return false”为不执行提交 ，return 一定要加
         onsubmit=“return true”或 onsubmit=“return ”都执行提交
     -->
     <form action="./点击事件.html" onsubmit="return checkFrom()">
             用户名：<input type="text" id="username" onblur="checkUsername()"
-                    onfocus="showTips('span_username','用户名长度不能小于六位')">
+                    onfocus="showTips('span_username','用户名长度不能小于六位')" onkeyup="checkUsername()">
 
         <span id="span_username"></span><br>
         <input type="submit" value="注册">

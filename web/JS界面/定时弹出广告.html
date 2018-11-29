@@ -5,9 +5,14 @@
     <title>Title</title>
     <script>
         /*获取id的显隐情况
-                block： 显示
-                none ： 隐藏
+                img.style.diaplay = "block"： 显示
+                img.style.display = "none"; ： 隐藏
         */
+
+        //var im = document.getElementById("img");
+        //把这句话放外面会报空值，文档加载顺序，找不到“img”这个ID
+        //放在方法里是后执行就能找到
+
         function funct1() {
             var im = document.getElementById("img");
             im.style.display ="block";

@@ -101,8 +101,25 @@
             }
         }
 
+        //校验手机号码
+        function checkPhone() {
+            var phone = document.getElementById("telephone").value;
+
+            var flag = checkMobile(phone);
+
+            var telephone = document.getElementById("span_phone");
+
+            if (flag){
+                telephone.innerHTML = "<font color='red' size='2'>恭喜您,可用</font>";
+                return true;
+            } else {
+                telephone.innerHTML ="<font color='red' size='2'>对不起,手机号码格式貌似有问题</font>";
+                return false;
+            }
+        }
+
         function checkForm(){
-            var flag = checkUsername() && checkPassword() && checkRePassword() && checkMail();
+            var flag = checkUsername() && checkPassword() && checkRePassword() && checkMail() && checkPhone();
             return flag;
         }
 
@@ -138,7 +155,9 @@
             </tr>
             <tr>
                 <td>手机号：</td>
-                <td><input type="text"></td>
+                <td><input type="text" id="telephone" onfocus="showTips('span_phone','手机号格式必须正确')" onblur="checkPhone()" onkeyup="checkPhone()">
+                </td>
+                <td><span id="span_phone"></span></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="提交"></td>

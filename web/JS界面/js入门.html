@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        /* 弱变量类型*/
+        /*
+            javascript 一门脚本语言
+            弱变量类型
+            JS 类型自动改变
+        * */
         var i =1;
         var j ="zhangsan";  //string  --- >String
         var str1 =111;
         var str2 ="111";
-        alert(str1==str2);   //true
+        alert(str1==str2);   //“==”值相等就为true,窗口弹窗
 
         //向页面输出内容
         document.write("程序员");
         //向控制台输出
         console.log("向控制台输出");
+        //在页面输出内容
+        //innerHTML
 
         function func1() {
             //1.首先要获得这个div
             var a = document.getElementById("div1")
             a.innerHTML = "<font color='red'>内容被替换掉了</font>"
+            //innerText 知识普通的文本
             //div.innerText = "<font color='red'>内容被替换掉了</font>";
         }
 
@@ -32,7 +39,7 @@
         function checkForm() {
             //获取用户输入的内容
             var input1 = document.getElementById("username");
-//				alert(input1.value);
+//				alert(input1.value); input1.value获取input1的内容值
             var uValue = input1.value;
             if(uValue.length >= 6){
 
@@ -44,13 +51,14 @@
             //获取用户输入的邮箱的值
             var email = document.getElementById("email")
             var uEmail = email.value;
+            //正则表达式.test() 验证邮箱是否符合
             if(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(uEmail)){
                 alert("校验成功");
             }else{
-                alert("校验失败")
+                alert("校验失败");
                 return false;
             }
-            return true;;
+            return true;
         }
     </script>
 </head>
