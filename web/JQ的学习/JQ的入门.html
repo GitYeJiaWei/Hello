@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导包，引入JQ的文件-->
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+
+    <script>
+        /*
+            js文档加载完成的事件
+            js自带的方法会覆盖方法
+        */
+        window.onload = function (ev) { alert("window.onload 111") };
+        window.onload = function (ev) { alert("window.onload 222") };
+        /*
+            JQ文档加载完成的事件
+            JQ会一个一个读取，不会覆盖
+         */
+        jQuery(document).ready(function () {
+            alert("jQuery(document).ready(function ()")
+        });
+        /*
+            jQuery 简写成 $
+        * */
+        $(document).ready(function () {
+            alert("$(document).ready(function () ")
+        });
+        /*
+            最简单的写法
+        * */
+        $(function () {
+            alert("$(function ()")
+        })
+    </script>
+
+    <script>
+        function onchage(){
+            var div = document.getElementById("div1");
+            div.innerHTML = "JS成功修改了内容"
+
+            //将JS对象转成JQ对象，然后修改html
+            //$(div).html("转成JQ对象来修改内容")
+        }
+
+        $(function(){
+            //给按钮绑定事件
+            $("#but2").click(function(){
+                //找到div1
+                $("#div1").html("JQ方式成功修改了内容");
+
+                //将JQ对象转成JS对象来调用，两种方式
+               /* var $div = $("#div1");
+                var jsDiv = $div.get(0);
+                jsDiv.innerHTML="jq转成JS对象成功";
+
+                var $div = $("#div1");
+                var jsDiv = $div[0];
+                jsDiv.innerHTML="jq转成JS对象成功"
+                */
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="js方式改变文字" onclick="onchage()">
+    <input type="button" value="jq方式改变文字" id="but2">
+    <div id="div1">
+        12346
+    </div>
+</body>
+</html>
