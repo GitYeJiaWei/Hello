@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--
+       JQ的开发步骤：(将我们页面的js代码和HTML的页面代码分离开)
+        1.导入JQ相关的文件
+        2.文档加载完成事件：$(function){}
+           页面初始化的操作，绑定事件，启动页面定时器
+        3.确定相关操作的事件
+        4.事件触发函数
+        5.函数里面再去操作相关的元素
+   -->
     <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
     <script>
-        
+        $(function () {
+            //显示页面图片
+            //给按钮绑定事件
+            $("#showPict").click(function(){
+//					$("#img1").show();
+//					$("#img1").slideDown();
+//					$("#img1").fadeIn(5000);
+
+                $("#pict").animate({ width:"800px",opacity:"1"},5000);
+
+            });
+
+            //隐藏页面图片
+            $("#hidePict").click(function(){
+                //获得img
+//					$("#img1").hide(10000);
+//					$("#img1").slideUp(500);
+//					$("#img1").fadeOut(5000);
+                $("#pict").animate({ width:"1366px",opacity:"0.2"},5000);
+            });
+        })
+
     </script>
 
 </head>
-    <!--
-        JQ的开发步骤：(将我们页面的js代码和HTML的页面代码分离开)
-         1.导入JQ相关的文件
-         2.文档加载完成事件：$(function){}
-            页面初始化的操作，绑定事件，启动页面定时器
-         3.确定相关操作的事件
-         4.事件触发函数
-         5.函数里面再去操作相关的元素
-    -->
 
 <body>
     <input type="button" value="显示" id="showPict">
-    <input type="button" value="隐藏" id="hide">
+    <input type="button" value="隐藏" id="hidePict">
     <img src="../img/emancipation.jpg" id="pict">
 </body>
 </html>
