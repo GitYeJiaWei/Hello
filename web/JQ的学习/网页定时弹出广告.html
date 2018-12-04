@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--
+        1.导入JQ的文件
+        2.编写JQ的文档加载事件
+        3.启动定时器 setTimeout("",3000)
+        4.编写显示广告的函数
+        5.在函数里再启动一个定时器
+        6.编写隐藏广告的函数
+    -->
     <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
 
     <script>
-        $(function () {
-            $("#picts").show();
+        //显示图片
+        function showAdd(){
+            //$("#picts").show();
+            $("#picts").slideDown(2000);
 
-        })
+            setTimeout("hideAdd()",3000);
+        }
+
+        //隐藏图片
+        function hideAdd(){
+            //$("#picts").hide();
+            $("#picts").slideUp(3000);
+        }
+
+       $(function () {
+           setTimeout("showAdd()",3000);
+       })
     </script>
 </head>
 <body>
-    <img src="../img/header.jpg" id="picts">
+    <img src="../img/header.jpg" id="picts" width="100%" style="display: none">
 </body>
 </html>
