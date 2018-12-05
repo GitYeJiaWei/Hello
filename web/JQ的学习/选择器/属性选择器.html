@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
+    <script>
+        //jquery 是从上往下都执行，覆盖，js是根据自己的原则执行
+        $(function () {
+            //通过属性选择器去找到 a href
+            $("a[href]").css("color","red");   //只有一个属性
+
+            //找出包含 href ,title
+            $("a[href][title]").css("color","yellow");  //多个属性
+
+            //找出包含herf title 并且 title ='testTitle'
+            $("a[href][title='testTitle']").css("color","green")  //多个属性 ,并且指定值
+        })
+
+    </script>
+
+</head>
+<body>
+    <a href="#">href 111</a>
+    <br>
+    <a href="#" title="">href 222</a>
+    <br>
+    <a href="#" title="testTitle">href 222</a>
+</body>
+</html>
