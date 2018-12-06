@@ -5,12 +5,34 @@
     <title>Title</title>
     <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
     <script>
+        /*JQ对象调用遍历*/
         var cityise = ["深圳市","东莞市","惠州市","广州市"];
         $(function () {
             $(cityise).each(function (i,n) {
                 console.log(this);
+                console.log(i+"---"+n);
+            });
+            $.each(cityise,function (i,n) {
+                console.log(i+">>>"+n);
             })
         })
+    </script>
+    
+    <script>
+        var cityise = ["深圳市","东莞市","惠州市","广州市"];
+
+        function callback1(i,n) {
+            console.log(i+" "+n);
+        }
+        
+        function bianli(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                var item = arr[i];
+                callback1(i,item)
+            }             
+        }
+        //调用函数
+        bianli(cityise);
     </script>
 </head>
 <body>

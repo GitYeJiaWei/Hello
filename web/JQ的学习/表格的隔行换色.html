@@ -13,14 +13,14 @@
     <script>
 
         $(function () {
-            /*//获得所有的行 :   元素选择器
+            //根据行号奇数/偶数去修改颜色
+            //修改偶数行
             $("tbody>tr:even").css("background-color","#CCCCCC");
             //修改基数行
-            $("tbody > tr:odd").css("background-color","#FFF38F");*/
-
-            // 后代选择器   选择器  选择器 儿子孙子
-            // 子元素选择器  　：　　子元素
-            $("tbody > tr").css("background-color","#FF0000");
+            $("tbody > tr:odd").css("background-color","#FFF38F");
+            //获取除第一行的所有行
+            //$("tbody > tr").css("background-color","#FF0000");
+            //$("tr:gt(0)").css("background-color","#FF0000")
         })
 
         /*
@@ -28,7 +28,12 @@
         进一步确定事件: 点击事件
         */
         $(function () {
+            //绑定点击事件
+            //this 代表的是当前函数的所有者
             $("#checkAll").click(function () {
+                //选择器[属性=‘属性值’],属性选择器
+                $("input[type='checkbox']:gt(0)").prop("checked",this.checked);
+                //获取当前的选中状态，修改属性用prop
                 $("input").prop("checked",this.checked);
             })
         })

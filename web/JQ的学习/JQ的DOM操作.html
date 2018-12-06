@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script>
+        /*
+            添加节点：
+                1.append 添加子节点
+                2.appendTo 往元素添加节点
+        * */
+        $(function () {
+            $("#but1").click(function () {
+                //往div后面加入元素
+                $("div").append("<font color='green'>来的呀士大夫看见</font>");
+
+                $("<font color='green'>来的呀士大夫看见</font>").appendTo("div");
+
+                //往div前面加入元素
+                $("div").prepend("<font color='green'>来的呀士大夫看见</font>");
+                //添加同级别元素
+                $("div").after("<font color='green'>来的呀士大夫看见</font>");
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <input type="button" value="点击添加" id="but1">
+    <div>
+        添加东西啦！
+    </div>
+</body>
+</html>
