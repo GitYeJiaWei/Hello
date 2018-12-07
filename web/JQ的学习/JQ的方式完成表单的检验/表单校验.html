@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+			1. 首先给必填项,添加尾部添加一个小红点
+			2. 获取用户输入的信息,做相应的校验
+			3. 事件: 获得焦点, 失去焦点, 按键抬起
+			4. 表单提交的事件
+
+			Jq的方式来实现:
+				1. 导入JQ的文件
+				2. 文档加载事件: 在必填项后天加一个小红点
+				3. 表单校验确定事件: blur focus keyup
+				4. 提交表单 submit
+		-->
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+            //在必填项后天加一个小红点
+            $(".bitian").after("<font color='red'>*</font>")
+
+            $(".bitian").blur(function () {
+                alert(this.value);
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <form action="./trigger和triggerHandler.html">
+        <div>
+            用户名：<input type="text" class="bitian">
+        </div>
+        <div>
+            密码：<input type="password" class="bitian">
+        </div>
+        <div>
+            手机号：<input type="tel">
+        </div>
+            <input type="submit" value="提交">
+    </form>
+</body>
+</html>

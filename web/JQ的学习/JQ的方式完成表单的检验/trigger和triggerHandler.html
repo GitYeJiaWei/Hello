@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        trigger        触发事件，但是会执行类似浏览器将光标移动到输入框的行为
+        triggerHandler 仅仅只是触发事件所对应的函数
+    -->
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+            $("#userName").focus(function () {
+                console.log("text focus被触发了")
+            });
+
+            $("#but1").click(function () {
+                $("#userName").trigger("focus");
+            });
+
+            $("#but2").click(function () {
+               $("#userName").triggerHandler("focus");
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <input type="text" id="userName">
+    <input type="button" value="trigger" id="but1">
+    <input type="button" value="triggerHandler" id="but2">
+</body>
+</html>
