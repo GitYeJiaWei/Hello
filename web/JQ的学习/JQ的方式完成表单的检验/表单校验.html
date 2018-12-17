@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./style1.css" />
     <!--
 			1. 首先给必填项,添加尾部添加一个小红点
 			2. 获取用户输入的信息,做相应的校验
@@ -18,11 +19,36 @@
     <script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
     <script>
         $(function () {
-            //在必填项后天加一个小红点
-            $(".bitian").after("<font color='red'>*</font>")
+            //在必填项后天加一个小红点,兄弟
+            $(".bitian").after("<font class='high'>*</font>")
 
             $(".bitian").blur(function () {
-                alert(this.value);
+                //查找formtips这个类名，然后移除
+                $(this).parent().find(".formtips").remove();
+
+                //通过JQ方法的this判断当前的id
+                if ($(this).is("#username")){
+                    //$(this).val() ：获取this的值
+                    //$(this).parent() ： 获取父类的控件
+                    if ($(this).val().length<6){
+                        $(this).parent().append("<span class='formtips onError'>用户名太短</span>");
+                    } else {
+                        $(this).parent().append("<span class='formtips onSuccess'>用户名可用</span>");
+                    }
+                }
+
+                if ($(this).is("#password")){
+                    if ($(this).val().length<6){
+                        $(this).parent().append("<span class='formtips onError'>密码太短</span>");
+                    } else {
+                        $(this).parent().append("<span class='formtips onSuccess'>密码可用</span>");
+                    }
+                }
+            }).focus(function () {
+                //跟上面的失去焦点功能一致
+                $(this).triggerHandler("blur");
+            }).keyup(function () {
+                $(this).triggerHandler("blur");
             })
         })
 
@@ -32,10 +58,10 @@
 <body>
     <form action="./trigger和triggerHandler.html">
         <div>
-            用户名：<input type="text" class="bitian">
+            用户名：<input type="text" class="bitian" id="username">
         </div>
         <div>
-            密码：<input type="password" class="bitian">
+            密码：<input type="password" class="bitian" id="password">
         </div>
         <div>
             手机号：<input type="tel">
