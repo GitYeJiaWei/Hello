@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入CSS样式文件-->
+    <link rel="stylesheet" href="./laohuangli.css" />
+    <!--导入jquery-->
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+    <!--
+			编程开发的过程遇到问题
+				达不到预期效果
+				1.检查自己代码
+				2.使用断点调试工具 javascript
+				3.百度 or 问同学 or 问同事
+		-->
+    <script>
+        $(function () {
+            var url = "http://localhost:63342/Hello/web/JQ的学习/JQ的方式完成表单的检验/data.json";
+            $.get(url,function (Jsonarray) {
+
+                var good = Math.floor(Math.random()*3+1);
+                while (good>0){
+                    var index = Math.floor(Math.random()*Jsonarray.length);
+                    var obj = Jsonarray[index];
+                    $(".good ul").append("<li><div class='name'>"+obj.name+"</div><div class='description'>"+obj.good+"</div></li>")
+                    good--;
+                }
+
+                var bad = Math.floor(Math.random()*2+1);
+                while (bad>0){
+                    var index = Math.floor(Math.random()*Jsonarray.length);
+                    var obj = Jsonarray[index];
+                    $(".bad ul").append("<li><div class='name'>"+obj.name+"</div><div class='description'>"+obj.good+"</div></li>")
+                    bad--;
+                }
+            })
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            程序员老黄历
+        </div>
+        <div class="good">
+            <div class="title">
+                <table>
+                    <tr>
+                        <td>宜</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="bad">
+            <div class="title">
+                <table>
+                    <tr>
+                        <td>不宜</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
