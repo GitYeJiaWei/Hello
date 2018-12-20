@@ -14,9 +14,23 @@
 				2.使用断点调试工具 javascript
 				3.百度 or 问同学 or 问同事
 		-->
+
+    <!--
+        - JSON格式
+  ​	JSON对象
+  ```json
+  { key1:value}
+  {"username":"zhangsan","password":"123"}
+  ```
+
+  ​	JSON数组
+  ```json
+  [{ key1:value},{ key1:value},{ key1:value}]
+  ```
+    -->
     <script>
         $(function () {
-            var url = "http://localhost:63342/Hello/web/JQ的学习/JQ的方式完成表单的检验/data.json";
+            var url = "http://localhost:63343/Hello/web/JQ的学习/JQ的方式完成表单的检验/data.json";
             $.get(url,function (Jsonarray) {
 
                 var good = Math.floor(Math.random()*3+1);
@@ -31,7 +45,7 @@
                 while (bad>0){
                     var index = Math.floor(Math.random()*Jsonarray.length);
                     var obj = Jsonarray[index];
-                    $(".bad ul").append("<li><div class='name'>"+obj.name+"</div><div class='description'>"+obj.good+"</div></li>")
+                    $(".bad ul").append("<li><div class='name'>"+obj.name+"</div><div class='description'>"+obj.bad+"</div></li>")
                     bad--;
                 }
             })
