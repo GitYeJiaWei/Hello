@@ -21,14 +21,50 @@
 
     <!--为了确保适当的绘制和触屏缩放，需要在 head 之中添加 viewport 元数据标签。-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        div{
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
         <div class="container">
             这个是bootstrap的布局容器，类用于固定宽度并支持响应式布局的容器
+            <div class="row">
+                <div class="col-md-1 col-sm-2 col-xs-4">.col-md-1 </div>
+                <div class="col-md-1 col-sm-2 col-xs-4">.col-md-1</div>
+                <div class="col-md-1 col-sm-2 col-xs-4">.col-md-1</div>
+                <div class="col-md-1 col-sm-2">.col-md-1</div>
+                <div class="col-md-1 col-sm-2">.col-md-1</div>
+                <div class="col-md-1 col-sm-2">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">.col-md-8</div>
+                <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">.col-md-6</div>
+                <div class="col-md-6">.col-md-6</div>
+            </div>
         </div>
 
         <div class="container-fluid">
             这个是bootstrap的布局容器，类用于 100% 宽度，占据全部视口（viewport）的容器
+            <a href="#" class="btn btn-danger">百合网</a>
+            <a href="#" class="btn">世纪佳缘</a>
+            <a href="#" >天上人间</a>
         </div>
 </body>
 </html>
