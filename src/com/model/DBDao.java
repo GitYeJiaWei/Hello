@@ -1,11 +1,12 @@
 package com.model;
 
+
 import java.sql.*;
 
 public class DBDao {
     Connection conn = null;       //数据库连接对象
-    PreparedStatement ps = null;  //sql语句执行对象,Statement的子类
     Statement state =null;        //sql语句执行对象
+    PreparedStatement ps = null;  //sql语句执行对象,Statement的子类
     ResultSet rs = null;
 
     //打开连接
@@ -25,8 +26,11 @@ public class DBDao {
         String sInsert2 ="insert into user values('admin','123')";
 
         try{
+            //注册驱动
             Class.forName(driverName);
+            //建立数据库连接
             conn = DriverManager.getConnection(url,"root","123456");
+            //建立statement,跟数据库打交道一定需要这个对象
             state = conn.createStatement();
             state.execute(sCreateDBifNot);
             state.execute(sUseDB);
