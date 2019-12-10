@@ -1,0 +1,40 @@
+body{
+    color: cornflowerblue;
+    background: #EEEEEE;
+    margin: 0;
+    padding: 150px;
+    font-family: Georgia,Palatino,serif;
+    /*font-family: Georgia,Palatino,serif; 字体的一些风格*/
+}
+p{color: #FFA500;font-size: 14px;text-align: center;}
+h1,h2,h3,h4,h5{color: green; text-align: center;}
+#red{color: red;}
+#sidebar{
+    color: red;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+    line-height: 2px;
+    text-align: left;
+}
+table,th,tr{
+    border: 1px solid green;
+}
+th{
+    background-color: green;
+    color: white;
+}
+
+form{
+    text-align: center;
+}
+
+div{
+    border: 0px solid cornflowerblue;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    background:url("DownLoad/12345.jpg") no-repeat;
+    background-size: 100%;
+}
