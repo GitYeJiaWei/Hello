@@ -43,6 +43,7 @@ public class ImageServlet extends HttpServlet {
 	        int x = (int)(Math.random() * 80);
 	        int y = (int)(Math.random() * 25);
 	        bfi.setRGB(x, y, (int)(Math.random() * 255));
+
 	    }
 		
 	 /* //设置验证码中的干扰线
