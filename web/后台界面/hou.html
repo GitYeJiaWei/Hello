@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<!--
+    frameset 不能和body同时存在
+        <frameset rows="15%,20%,*"> 界面分为上中下，上15%，中20%，下剩余的
+            <frame src="top.html">上面的一块
+             <frameset cols="15%,*"> 中间的一快，分为左右两块
+                 <frame src="left.html" >
+                 <frame src="right.html" name="right">  跳转的页面name = “right”
+            </frameset>
+            <frame src="bottom.html">下面的一块
+        </frameset>
+
+       right.html 页面点击跳转 target="" 具体的属性有 blank，self，name（指定页面的名字）
+-->
+
 <frameset rows="15%,*">
     <frame src="top.html">
     <frameset cols="15%,*">
